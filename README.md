@@ -24,3 +24,7 @@
 ```
 > python main.py
 ```
+4. To run tests .
+```
+> py.test
+```

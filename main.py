@@ -15,7 +15,7 @@ class MainWindow(QtWidgets.QMainWindow , plotter.Ui_MainWindow):
         self.setupUi(self)
         self.widget_configuration(self.widget,'The plot')
         ## determine which char will be validate
-        validator_func = QRegExpValidator(QRegExp(r'[0-9Xx+-/^()*]+'))
+        validator_func = QRegExpValidator(QRegExp(r'[0-9Xx+-/^()* ]+'))
         validator_int = QRegExpValidator(QRegExp(r'[0-9-+]+'))
         self.func.setValidator(validator_func)
         self.min.setValidator(validator_int)
@@ -44,7 +44,6 @@ class MainWindow(QtWidgets.QMainWindow , plotter.Ui_MainWindow):
                 self.widget.setLimits(xMin = data.min, xMax= data.max,yMin =min(data.y), yMax =max(data.y) )
                 self.widget.setXRange(data.min,data.max)
                 self.widget.setYRange(min(data.y),max(data.y))
-                print(data.y)
             except:
                 self.pop_up("Enter validate function syntax!")
                 self.text_clear()

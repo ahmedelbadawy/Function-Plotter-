@@ -15,6 +15,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(888, 710)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Icons/line-chart.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -86,7 +89,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Plotter"))
         self.widget.setStatusTip(_translate("MainWindow", "The graph"))
         self.func.setStatusTip(_translate("MainWindow", "the function"))
         self.func.setPlaceholderText(_translate("MainWindow", "Enter a function of x, e.g., 5*x^3 + 2*x."))
